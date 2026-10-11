@@ -9,8 +9,15 @@ import (
 func Array() {
 	var size int
 
-	fmt.Print("Enter the size of the array: ")
-	fmt.Scan(&size)
+	for {
+		fmt.Print("Enter the size of the array: ")
+		fmt.Scan(&size)
+		if size < 1 {
+			fmt.Println("Invalid size")
+		} else {
+			break
+		}
+	}
 
 	arr := make([]int, size)
 
@@ -35,7 +42,7 @@ func Array() {
 
 			if index < 0 || index >= size {
 				fmt.Println("Invalid index")
-				return
+				continue
 			}
 
 			arr[index] = element
@@ -46,7 +53,7 @@ func Array() {
 
 			if index < 0 || index >= size {
 				fmt.Println("Invalid index")
-				return
+				continue
 			}
 
 			arr[index] = 0
