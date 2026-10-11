@@ -5,6 +5,7 @@ import (
 
 	"github.com/nexidian/gocliselect"
 	"github.com/silver-47/dsa-in-golang/ds/array"
+	"github.com/silver-47/dsa-in-golang/ds/linkedlist"
 )
 
 func main() {
@@ -26,6 +27,23 @@ func main() {
 		switch choice {
 		case "array":
 			array.Array()
+		case "linkedlist":
+			submenu := gocliselect.NewMenu("Linked List")
+
+			submenu.AddItem("Singly Linked List", "singly")
+			submenu.AddItem("Doubly Linked List", "doubly")
+			submenu.AddItem("Exit", "exit")
+
+			subChoice := submenu.Display()
+
+			switch subChoice {
+			case "singly":
+				linkedlist.Singly()
+			case "doubly":
+				linkedlist.Doubly()
+			case "exit":
+				return
+			}
 		case "exit":
 			fmt.Println("Thank you for using this program.")
 			return
