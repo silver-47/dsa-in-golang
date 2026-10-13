@@ -33,7 +33,7 @@ func main() {
 
 			submenu.AddItem("Singly Linked List", "singly")
 			submenu.AddItem("Doubly Linked List", "doubly")
-			submenu.AddItem("Exit", "exit")
+			submenu.AddItem("Back to Main Menu", "back")
 
 			subChoice := submenu.Display()
 
@@ -42,8 +42,8 @@ func main() {
 				linkedlist.Singly()
 			case "doubly":
 				linkedlist.Doubly()
-			case "exit":
-				return
+			case "back":
+				continue
 			}
 		case "stack":
 			stack.SimpleStack()
