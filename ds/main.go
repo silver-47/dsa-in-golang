@@ -6,6 +6,7 @@ import (
 	"github.com/nexidian/gocliselect"
 	"github.com/silver-47/dsa-in-golang/ds/array"
 	"github.com/silver-47/dsa-in-golang/ds/linkedlist"
+	"github.com/silver-47/dsa-in-golang/ds/queue"
 	"github.com/silver-47/dsa-in-golang/ds/stack"
 )
 
@@ -47,6 +48,26 @@ func main() {
 			}
 		case "stack":
 			stack.SimpleStack()
+		case "queue":
+			submenu := gocliselect.NewMenu("Queue")
+
+			submenu.AddItem("Simple Queue", "simple")
+			submenu.AddItem("Circular Queue", "circular")
+			// submenu.AddItem("Priority Queue", "priority")
+			submenu.AddItem("Back to Main Menu", "back")
+
+			subChoice := submenu.Display()
+
+			switch subChoice {
+			case "simple":
+				queue.SimpleQueue()
+			case "circular":
+				queue.CircularQueue()
+			case "priority":
+				queue.PriorityQueue()
+			case "back":
+				continue
+			}
 		case "exit":
 			fmt.Println("Thank you for using this program.")
 			return
