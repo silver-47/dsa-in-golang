@@ -6,6 +6,7 @@ import (
 	"github.com/nexidian/gocliselect"
 	"github.com/silver-47/dsa-in-golang/ds/array"
 	"github.com/silver-47/dsa-in-golang/ds/linkedlist"
+	"github.com/silver-47/dsa-in-golang/ds/stack"
 )
 
 func main() {
@@ -44,6 +45,8 @@ func main() {
 			case "exit":
 				return
 			}
+		case "stack":
+			stack.SimpleStack()
 		case "exit":
 			fmt.Println("Thank you for using this program.")
 			return
