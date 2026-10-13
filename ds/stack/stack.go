@@ -56,13 +56,12 @@ func SimpleStack() {
 	var s = Stack{}
 
 	for {
-		menu := gocliselect.NewMenu("Stack Operations")
-
-		menu.AddItem("Push", "push")
-		menu.AddItem("Pop", "pop")
-		menu.AddItem("Peek", "peek")
-		menu.AddItem("Display", "display")
-		menu.AddItem("Back to Main Menu", "back")
+		menu := gocliselect.NewMenu("Stack Operations").
+			AddItem("Push", "push").
+			AddItem("Pop", "pop").
+			AddItem("Peek", "peek").
+			AddItem("Display", "display").
+			AddItem("Back to Main Menu", "back")
 
 		choice := menu.Display()
 

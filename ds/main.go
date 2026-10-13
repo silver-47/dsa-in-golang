@@ -12,17 +12,16 @@ import (
 
 func main() {
 	for {
-		menu := gocliselect.NewMenu("Data Structures")
-
-		menu.AddItem("Array", "array")
-		menu.AddItem("Linked List", "linkedlist")
-		menu.AddItem("Stack", "stack")
-		menu.AddItem("Queue", "queue")
-		menu.AddItem("Tree", "tree")
-		menu.AddItem("Graph", "graph")
-		menu.AddItem("Heap", "heap")
-		menu.AddItem("Hash Table", "hashtable")
-		menu.AddItem("Exit", "exit")
+		menu := gocliselect.NewMenu("Data Structures").
+			AddItem("Array", "array").
+			AddItem("Linked List", "linkedlist").
+			AddItem("Stack", "stack").
+			AddItem("Queue", "queue").
+			AddItem("Tree", "tree").
+			AddItem("Graph", "graph").
+			AddItem("Heap", "heap").
+			AddItem("Hash Table", "hashtable").
+			AddItem("Exit", "exit")
 
 		choice := menu.Display()
 
@@ -30,11 +29,10 @@ func main() {
 		case "array":
 			array.Array()
 		case "linkedlist":
-			submenu := gocliselect.NewMenu("Linked List")
-
-			submenu.AddItem("Singly Linked List", "singly")
-			submenu.AddItem("Doubly Linked List", "doubly")
-			submenu.AddItem("Back to Main Menu", "back")
+			submenu := gocliselect.NewMenu("Linked List").
+				AddItem("Singly Linked List", "singly").
+				AddItem("Doubly Linked List", "doubly").
+				AddItem("Back to Main Menu", "back")
 
 			subChoice := submenu.Display()
 
@@ -49,12 +47,11 @@ func main() {
 		case "stack":
 			stack.SimpleStack()
 		case "queue":
-			submenu := gocliselect.NewMenu("Queue")
-
-			submenu.AddItem("Simple Queue", "simple")
-			submenu.AddItem("Circular Queue", "circular")
-			// submenu.AddItem("Priority Queue", "priority")
-			submenu.AddItem("Back to Main Menu", "back")
+			submenu := gocliselect.NewMenu("Queue").
+				AddItem("Simple Queue", "simple").
+				AddItem("Circular Queue", "circular").
+				// submenu.AddItem("Priority Queue", "priority")
+				AddItem("Back to Main Menu", "back")
 
 			subChoice := submenu.Display()
 

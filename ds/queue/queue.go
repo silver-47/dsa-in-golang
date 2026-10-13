@@ -56,13 +56,12 @@ func SimpleQueue() {
 	var queue Queue
 
 	for {
-		menu := gocliselect.NewMenu("Queue")
-
-		menu.AddItem("Enqueue", "enqueue")
-		menu.AddItem("Dequeue", "dequeue")
-		menu.AddItem("Peek", "peek")
-		menu.AddItem("Display", "display")
-		menu.AddItem("Back to Main Menu", "back")
+		menu := gocliselect.NewMenu("Queue").
+			AddItem("Enqueue", "enqueue").
+			AddItem("Dequeue", "dequeue").
+			AddItem("Peek", "peek").
+			AddItem("Display", "display").
+			AddItem("Back to Main Menu", "back")
 
 		choice := menu.Display()
 

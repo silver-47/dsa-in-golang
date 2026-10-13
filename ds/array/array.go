@@ -22,12 +22,11 @@ func Array() {
 	arr := make([]int, size)
 
 	for {
-		menu := gocliselect.NewMenu("Array Operations")
-
-		menu.AddItem("Insert", "insert")
-		menu.AddItem("Delete", "delete")
-		menu.AddItem("Display", "display")
-		menu.AddItem("Back to Main Menu", "back")
+		menu := gocliselect.NewMenu("Array Operations").
+			AddItem("Insert", "insert").
+			AddItem("Delete", "delete").
+			AddItem("Display", "display").
+			AddItem("Back to Main Menu", "back")
 
 		choice := menu.Display()
 

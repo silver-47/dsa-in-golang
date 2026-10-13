@@ -130,20 +130,19 @@ func Doubly() {
 	var dll = DoublyLinkedList{}
 
 	for {
-		menu := gocliselect.NewMenu("Doubly Linked List Operations")
-
-		menu.AddItem("Insert", "insert")
-		menu.AddItem("Delete", "delete")
-		menu.AddItem("Display", "display")
-		menu.AddItem("Back to Main Menu", "back")
+		menu := gocliselect.NewMenu("Doubly Linked List Operations").
+			AddItem("Insert", "insert").
+			AddItem("Delete", "delete").
+			AddItem("Display", "display").
+			AddItem("Back to Main Menu", "back")
 
 		subChoice := menu.Display()
 
 		switch subChoice {
 		case "display":
-			submenu := gocliselect.NewMenu("Direction of Display?")
-			submenu.AddItem("Normal", "normal")
-			submenu.AddItem("Reverse", "reverse")
+			submenu := gocliselect.NewMenu("Direction of Display?").
+				AddItem("Normal", "normal").
+				AddItem("Reverse", "reverse")
 			subChoice := submenu.Display()
 			dll.Display(subChoice == "reverse")
 		case "insert":
@@ -155,10 +154,10 @@ func Doubly() {
 				dll.Tail = newNode
 				dll.Size = 1
 			} else {
-				submenu := gocliselect.NewMenu("Where do you want to insert the value at?")
-				submenu.AddItem("At Specific Position", "position")
-				submenu.AddItem("At Beginning", "beginning")
-				submenu.AddItem("At End", "end")
+				submenu := gocliselect.NewMenu("Where do you want to insert the value at?").
+					AddItem("At Specific Position", "position").
+					AddItem("At Beginning", "beginning").
+					AddItem("At End", "end")
 
 				subChoice := submenu.Display()
 
@@ -182,10 +181,10 @@ func Doubly() {
 				dll.Tail = nil
 				dll.Size = 0
 			} else {
-				submenu := gocliselect.NewMenu("Where do you want to delete the value from?")
-				submenu.AddItem("From Specific Position", "position")
-				submenu.AddItem("From Beginning", "beginning")
-				submenu.AddItem("From End", "end")
+				submenu := gocliselect.NewMenu("Where do you want to delete the value from?").
+					AddItem("From Specific Position", "position").
+					AddItem("From Beginning", "beginning").
+					AddItem("From End", "end")
 
 				subChoice := submenu.Display()
 
