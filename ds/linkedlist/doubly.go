@@ -7,21 +7,19 @@ import (
 )
 
 type DoublyNode struct {
-	Data int
-	Next *DoublyNode
-	Prev *DoublyNode
+	Data       int
+	Next, Prev *DoublyNode
 }
 
 type DoublyLinkedList struct {
-	Head *DoublyNode
-	Tail *DoublyNode
-	Size int
+	Head, Tail *DoublyNode
+	Size       int
 }
 
 // Display all nodes of the list.
 // reverse: false to display the list in normal order.
 // reverse: true to display the list in reverse order.
-func (list *DoublyLinkedList) Display(reverse bool) {
+func (list DoublyLinkedList) Display(reverse bool) {
 	if list.Size == 0 {
 		fmt.Println("List is empty.")
 	} else {
