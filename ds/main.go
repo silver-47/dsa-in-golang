@@ -8,6 +8,7 @@ import (
 	"github.com/silver-47/dsa-in-golang/ds/linkedlist"
 	"github.com/silver-47/dsa-in-golang/ds/queue"
 	"github.com/silver-47/dsa-in-golang/ds/stack"
+	"github.com/silver-47/dsa-in-golang/ds/tree"
 )
 
 func main() {
@@ -62,6 +63,28 @@ func main() {
 				queue.CircularQueue()
 			case "priority":
 				queue.PriorityQueue()
+			case "back":
+				continue
+			}
+		case "tree":
+			submenu := gocliselect.NewMenu("Tree").
+				AddItem("Binary Tree", "binary").
+				AddItem("Binary Search Tree", "bst").
+				AddItem("AVL Tree", "avl").
+				AddItem("Trie", "trie").
+				AddItem("Back to Main Menu", "back")
+
+			subChoice := submenu.Display()
+
+			switch subChoice {
+			case "binary":
+				tree.SimpleBinaryTree()
+			case "bst":
+				tree.BinarySearchTree()
+			case "avl":
+				tree.AVLTree()
+			case "trie":
+				tree.Trie()
 			case "back":
 				continue
 			}
